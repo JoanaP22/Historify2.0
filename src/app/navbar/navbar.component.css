@@ -1,0 +1,15 @@
+.navbar {
+    background-color: #1D3F29;
+    box-shadow: 3px 2px 8px -1px rgba(0, 0, 0, 0.6);
+
+}
+
+img {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+}
+h3 {
+    color: white;
+    padding-left: 15px;
+}

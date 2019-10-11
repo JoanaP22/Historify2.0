@@ -1,0 +1,230 @@
+* {
+    
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.col-5, .col-md-12 {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.form-row {
+
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+
+.container-fluid {
+    background-color: #F8F8F8;
+    font-family: sans-serif;
+    height: 100vh;
+    width:100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; 
+}
+
+.login-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    padding: 60px 40px 40px 40px;
+    background: white;
+    border-radius: 10px;
+    color: black;
+    box-shadow: 0 15px 25px rgba(29, 63, 41, 0.5);
+}
+
+.registo h3 {
+    margin-top: 5vh;
+    color:  #D88E04;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+
+.membro {
+    background: url("src/assets/login.jpg") no-repeat left bottom;
+    background-size: cover;
+}
+
+.form {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.form .input-group input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #1D3F29;
+    outline: none;
+    background-color: transparent;
+    color: inherit;
+}
+
+.form .input-group label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: .3s ease-out;
+}
+
+.form .input-group input:focus + label,
+.form .input-group input:valid + label  {
+    transform: translateY(-18px);
+    color: #1D3F29;
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+
+
+/* Input DATA correcções para cortar setas e tirar placeholders */
+
+input[type=date]::-webkit-datetime-edit {
+    color: transparent;
+}
+input[type=date]:focus::-webkit-datetime-edit {
+    color: black !important;
+}
+
+input[type=date]:required:valid::-webkit-datetime-edit {
+    color: black !important;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+/* ============================== */
+
+.submit-btn {
+    display: block;
+    margin-left: auto;
+    border: none;
+    outline: none;
+    background: #D88E04;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.membro a {
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #D88E04;
+    transition-duration: 0.3s;
+}
+
+.membro a:hover {
+    transition-duration: 0.3s;
+    transform-origin: center;
+    color: #1D3F29;
+    transform: scale(1.1);
+}
+
+/* MEDIDAS DE QUERIES ASSUMIDAS COM BASE NAS MEDIDAS DE BOOTSTRAP: https://getbootstrap.com/docs/4.3/layout/overview/#responsive-breakpoints */
+
+
+
+
+/* SO APLICAVEL EM TELEMOVEL ATÉ ALTURA DO PC */
+@media (max-width: 767px) {
+
+    .login-wrapper {
+        padding-top: 0px;
+        max-width: 400px;
+        max-height: 80vh;
+        
+
+    }
+    .registo {
+        background: url("src/assets/loginSmartphone.jpg") no-repeat left bottom;
+        background-size: cover;
+    }
+    
+    .form {
+        margin-top: 3vh;
+        margin-bottom: 0px;
+        max-height: 40vh;
+        min-height: unset;
+    }
+
+    .form .input-group input {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+    
+    .form .input-group label {
+        font-size: 1rem;
+        padding: 0px;
+    }
+    
+    .form .input-group input:focus + label,
+    .form .input-group input:valid + label {
+        transform: translateY(-18px);
+        color: #1D3F29;
+        font-size: .8rem;
+        font-weight: 600;
+        padding: 0px;  
+    }
+
+    .submit-btn {
+        display: inline;
+        margin-right: auto;
+        border: none;
+        outline: none;
+        background: #D88E04;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        color: white;
+    }
+
+    .registo a {
+        color: #1D3F29;
+        font-weight: 600;
+        font-size: 0.8rem;
+        border-bottom: 1px solid #1D3F29; 
+    }
+
+
+
+    .login-wrapper h3 {
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        text-align: center;
+        
+    }
+
+    .botao {
+        padding-top: 5vh;
+        padding-right: 0px;
+    }
+
+
+}
+
+

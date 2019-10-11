@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="row login-wrapper">
+
+        <div class="d-none d-md-block col-md-6 membro text-center d-md-flex align-content-center flex-wrap">
+            <a routerLink="/registo" routerLinkActive="router-link-active"> <p>Não tenho conta</p> </a>
+        </div>
+        <div class="col-12 col-md-6 registo">
+            <h3 class="text-center text-md-left">LOGIN</h3>
+            <form action="" class="form" autocomplete="off">
+
+                <div class="input-group">
+                    <input type="text" name="loginUser1" id="loginUser1" [(ngModel)]="nome" required>
+                    <label for="loginUser1">Nome ou Username</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" name="loginUser1" id="loginUser1" [(ngModel)]="password" required>
+                    <label for="loginUser1">Password</label>
+                </div>
+
+                <div class="form-row botao">
+                    
+                    <div class="col-7 text-left" *ngIf="smartPhone">
+                        <a routerLink="/registo" routerLinkActive="router-link-active"> <p>Ainda não tenho conta</p> </a>
+
+                    </div>
+                    <div class="col-5 col-md-12 text-right">
+                        <button class="submit-btn">Entrar</button>
+
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
