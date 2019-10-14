@@ -4,6 +4,7 @@ import * as $ from 'jquery';
 import { ApiTempoService } from '../_services/api-tempo.service';
 import { ApiDBService } from '../_services/api-db.service';
 import { Router} from "@angular/router";
+import { NavBarService } from '../nav-bar.service';
 
 @Component({
   selector: 'app-home-page',
