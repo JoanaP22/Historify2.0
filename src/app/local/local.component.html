@@ -1,5 +1,7 @@
 <!-- FOTO E INFORMAÇOES PRINCIPAIS DO LOCAL -->
+<ng-container *ngFor= "let l of local">
 <div class="container-fluid">
+   
     <div class="row nomeLocal h-100">
         <div class="col-12 col-md-6 imagemLocal text-center my-auto">
             <img src="https://i.imgur.com/Ue9bZoY.jpg" alt="">
@@ -9,7 +11,7 @@
             <!-- Titulo e rating -->
             <div class="row titulo h-100">
                 <div class="col-8 text-center my-auto">
-                    <h2>Paço dos Duques de Bragança</h2>
+                    <h2>{{l.nome}} </h2>
                 </div>
 
                 <div class="col-4 text-center my-auto">
@@ -20,9 +22,7 @@
 
             <!-- Texto e links -->
             <div class="row h-100 justify-content-center">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque qui, quo officia rerum ipsum eum
-                    excepturi iusto tempore suscipit. Numquam possimus ducimus eius asperiores corporis nemo rem facilis
-                    placeat eum.</p>
+                <p>{{l.descricao}}.</p>
                 <div class="icons text-center">
                     <a href="#"><img class="icon-imagem" src="assets\visitado.png"></a>
                     <a href="#"><img class="icon-imagem" src="assets\favorito.png"></a>
@@ -59,7 +59,7 @@
                 <div class="col-4 diaSemana">
                     <p>Domingo</p>
                     <img src="assets/clearsky.png" alt="">
-                    <p>25ºC</p>
+                    <p>{{temp}}°C</p>
                 </div>
                 <div class="col-4 diaSemana">
                     <p>Segunda</p>
@@ -83,9 +83,9 @@
             <ul>
                 <li> <strong>Ano de construção:</strong> </li>
                 <li> <strong>Estilo:</strong> </li>
-                <li> <strong>Posição Geográfica:</strong> </li>
-                <li> <strong>Proprietário:</strong> </li>
-                <li> <strong>Outras Informações:</strong> </li>
+                <li> <strong>Posição Geográfica: </strong> Latitude: {{l.latitude}}   Longitude: {{l.longitude}}</li>
+                <li> <strong>Proprietário: </strong> {{l.dono_atual}}</li>
+                <li> <strong>Outras Informações:</strong> {{l.horario_func}}</li>
             </ul>
         </div>
 
@@ -192,6 +192,7 @@
                 distinctio quibusdam aliquam?</p>
         </div>
     </div>
+    
 </div>
 
 
@@ -300,3 +301,4 @@
     
 
 </div>
+</ng-container>
