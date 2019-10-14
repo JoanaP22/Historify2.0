@@ -91,7 +91,6 @@
     color: #D88E04;
     font-size: .8rem;
     font-weight: 600;
-
 }
 
 /* Input DATA correcções para cortar setas e tirar placeholders */
@@ -134,8 +133,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     text-decoration: none;
     margin-left: auto;
     margin-right: auto;
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1rem;
     color: #1D3F29;
     transition-duration: 0.3s;
 }
@@ -150,7 +148,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 /* MEDIDAS DE QUERIES ASSUMIDAS COM BASE NAS MEDIDAS DE BOOTSTRAP: https://getbootstrap.com/docs/4.3/layout/overview/#responsive-breakpoints */
 
 
-/* SO APLICAVEL EM TELEMOVEL ATÉ ALTURA DO PC */
+/* SO APLICAVEL EM TELEMOVEL ATÉ ALTURA DO TABLET */
 @media (max-width: 767px) {
 
     .registo {

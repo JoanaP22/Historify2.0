@@ -5,69 +5,52 @@
 .row-imagens {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     background-color: white;
     padding-right: 11%;
     /* box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); */
-
 }
 
 .col-imagens {
     position: absolute;
-
 }
 
-.row-imagens img 
-{   
-    height: 100vh;
-    width: 14%;
+.row-imagens img {   
+    height: 100%;
+    width: 16%;
     object-fit: cover;
-    margin-right: 3%;
+    margin-right: 2%;
 }
 
 
 
 #img1-overlay {
+    -webkit-filter: grayscale(100%);filter: grayscale(100%);
     position: absolute;
-    background: url('https://i.imgur.com/0VQSLwS.jpg') no-repeat left;
     top: 0;
     left: 5%;
-    z-index: 91;
-    width: 14%;
+    z-index: 90;
+    width: 16%;
     height: 100%;
     transition: 0.4s;
     box-shadow: 3px 2px 8px -1px rgba(0, 0, 0, 0.4);
     overflow: hidden;
-
 }
 
-#img1-overlay h2 {
-    white-space: nowrap; 
-    color: white;
-    z-index: 90;
-    font-size: 20px;
-    position: absolute;
-    overflow: hidden;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-}
-
-
- #img1-overlay:hover {
-    width: 82%;
-    background: url('https://i.imgur.com/Kk2SA8r.jpg') no-repeat left;
+#img1-overlay:hover {
+    -webkit-filter: none;
+    width: 90%;
+    transform-origin: left top;
 }
 
 
 #img2-overlay {
+    -webkit-filter: grayscale(100%);filter: grayscale(100%);
     position: absolute;
-    background: url('https://i.imgur.com/YgItl8M.jpg') no-repeat left;
     top: 0;
-    left: 22%;
+    left: 23%;
     z-index: 80;
-    width: 14%;
+    width: 16%;
     height: 100%;
     transition: 0.3s;
     box-shadow: 3px 2px 8px -1px rgba(0, 0, 0, 0.4);
@@ -75,17 +58,18 @@
 }
 
 #img2-overlay:hover {
-    width: 65%;
-    background: url('https://i.imgur.com/scXQPCe.jpg') no-repeat left;
+    -webkit-filter: none;
+    width: 72%;
+    transform-origin: left top;
 }
 
 #img3-overlay {
+    -webkit-filter: grayscale(100%);filter: grayscale(100%);
     position: absolute;
-    background: url('https://i.imgur.com/JX9EoIi.jpg') no-repeat left;
     top: 0;
-    left: 39%;
-    z-index: 70;
-    width: 14%;
+    left: 41%;
+    z-index: 5;
+    width: 16%;
     height: 100%;
     transition: 0.3s;
     box-shadow: 3px 2px 8px -1px rgba(0, 0, 0, 0.4);
@@ -93,18 +77,20 @@
 }
 
 #img3-overlay:hover {
-    width: 48%;
-    background: url('https://i.imgur.com/KSF3g2v.jpg') no-repeat left;
+    -webkit-filter: none;
+    transform-origin: left top;
+    width: 54%;
+
 }
 
 
 #img4-overlay {
+    -webkit-filter: grayscale(100%);filter: grayscale(100%);
     position: absolute;
-    background: url('https://i.imgur.com/7iTKfJl.jpg') no-repeat left;
     top: 0;
-    left: 56%;
-    z-index: 60;
-    width: 14%;
+    left: 59%;
+    z-index:4;
+    width: 16%;
     height: 100%;
     transition: 0.3s;
     box-shadow: 3px 2px 8px -1px rgba(0, 0, 0, 0.4);
@@ -112,31 +98,29 @@
 }
 
 #img4-overlay:hover {
-    width: 31%;
-    background: url('https://i.imgur.com/KJCKEMi.jpg') no-repeat left;
+    width: 36%;
+    -webkit-filter: none;
+
 }
 
 
-#img5 {
+#img5-overlay {
+    -webkit-filter: grayscale(100%);filter: grayscale(100%);
     position: absolute;
     top: 0;
-    left: 73%;
-    z-index: 50;
+    left: 77%;
+    width: 16%;
+    z-index: 3;
     transition: 0.3s;
     box-shadow: 3px 2px 8px -1px rgba(0, 0, 0, 0.4);
 
 }
 
-#img6 {
-    position: absolute;
-    top: 12vh;
-    right: 0;
-    width: 7%;
-    height: 85vh;
-    object-fit: cover;
-    font-size: 6rem;
-
+#img5-overlay:hover {
+    -webkit-filter: none;
 }
+
+
 
 
 .historify {
@@ -144,7 +128,7 @@
     position: absolute;
     top: 15vh;
     left: 3%;
-    width: 86%;
+    width: 97%;
     z-index: 100;
     background-color: white;
     color: #1D3F29;
@@ -159,3 +143,50 @@
     /* text-shadow: 2px 2px 4px #000000; */
 
 } 
+
+
+/* ======================================================= Lado de Pesquisas ======================================================= */
+
+
+.pesquisa {
+    padding: 12vh 30px 4vh 0px;
+}
+.dropdown-toggle, .dropdown-menu, .dropdown-item {
+    width: 100%;
+    font-size: 1.3rem;
+}
+
+.dropdown-toggle {
+    margin-bottom: 5vh;
+    font-size: 1.6rem;
+    background-color: white;
+    color:#1D3F29;
+    font-weight: 600;
+    border: none;
+    border-bottom: 2px solid  #D88E04;
+    border-radius: 0px;
+}
+
+.dropdown-menu {
+    max-height: 30vh;
+    overflow: auto;
+    border: 2px solid  #D88E04;
+}
+
+.mapaWrapper {
+    height: 53vh;
+    padding-right: 30px;
+}
+
+.mapa {
+   
+    width: 100%;
+    height: 40vh;
+    background-color: #D88E04;
+    margin-right: 15px;
+    border-radius: 25px;
+    align-content: flex-end;
+    margin-bottom: 5vh;
+    margin-top: auto;
+}
+

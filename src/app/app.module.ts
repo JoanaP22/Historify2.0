@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component'
 import { NavBarService } from './nav-bar.service';
 import { RegistoComponent } from './registo/registo.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
+import { TestesComponent } from './testes/testes.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
     LoginComponent,
     RegistoComponent,
     SobreNosComponent,
+    TestesComponent,
     
   ],
   imports: [

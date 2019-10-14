@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { LocalComponent } from './local/local.component';
 import { RegistoComponent } from './registo/registo.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
+import { TestesComponent } from './testes/testes.component';
 
 
 
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'navbar', component: NavbarComponent},
   {path: 'registo', component: RegistoComponent},
   {path: 'sobre-nos', component: SobreNosComponent},
+  {path: 'testes', component: TestesComponent},
 
   //Caso seja inserido informação inválida, reedireciona para '', que reedireciona para HomePage
   {path: '**', redirectTo: '' }

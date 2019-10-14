@@ -1,0 +1,192 @@
+/* Menu de fotos que expandem */
+.container-fluid {
+    margin-top: 10vh;
+}
+.row-imagens {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    background-color: white;
+    padding-right: 11%;
+    /* box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); */
+}
+
+.col-imagens {
+    position: absolute;
+}
+
+.row-imagens img {   
+    height: 100%;
+    width: 16%;
+    object-fit: cover;
+    margin-right: 2%;
+}
+
+
+
+#img1-overlay {
+    -webkit-filter: grayscale(100%);filter: grayscale(100%);
+    position: absolute;
+    top: 0;
+    left: 5%;
+    z-index: 90;
+    width: 16%;
+    height: 100%;
+    transition: 0.4s;
+    box-shadow: 3px 2px 8px -1px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+#img1-overlay:hover {
+    -webkit-filter: none;
+    width: 90%;
+    transform-origin: left top;
+}
+
+
+#img2-overlay {
+    -webkit-filter: grayscale(100%);filter: grayscale(100%);
+    position: absolute;
+    top: 0;
+    left: 23%;
+    z-index: 80;
+    width: 16%;
+    height: 100%;
+    transition: 0.3s;
+    box-shadow: 3px 2px 8px -1px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+#img2-overlay:hover {
+    -webkit-filter: none;
+    width: 72%;
+    transform-origin: left top;
+}
+
+#img3-overlay {
+    -webkit-filter: grayscale(100%);filter: grayscale(100%);
+    position: absolute;
+    top: 0;
+    left: 41%;
+    z-index: 5;
+    width: 16%;
+    height: 100%;
+    transition: 0.3s;
+    box-shadow: 3px 2px 8px -1px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+#img3-overlay:hover {
+    -webkit-filter: none;
+    transform-origin: left top;
+    width: 54%;
+
+}
+
+
+#img4-overlay {
+    -webkit-filter: grayscale(100%);filter: grayscale(100%);
+    position: absolute;
+    top: 0;
+    left: 59%;
+    z-index:4;
+    width: 16%;
+    height: 100%;
+    transition: 0.3s;
+    box-shadow: 3px 2px 8px -1px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+#img4-overlay:hover {
+    width: 36%;
+    -webkit-filter: none;
+
+}
+
+
+#img5-overlay {
+    -webkit-filter: grayscale(100%);filter: grayscale(100%);
+    position: absolute;
+    top: 0;
+    left: 77%;
+    width: 16%;
+    z-index: 3;
+    transition: 0.3s;
+    box-shadow: 3px 2px 8px -1px rgba(0, 0, 0, 0.4);
+
+}
+
+#img5-overlay:hover {
+    -webkit-filter: none;
+}
+
+
+
+
+.historify {
+    letter-spacing: 1rem;
+    position: absolute;
+    top: 15vh;
+    left: 3%;
+    width: 97%;
+    z-index: 100;
+    background-color: white;
+    color: #1D3F29;
+    /* box-shadow: 1px 3px 5px rgb(0, 0, 0, 0.3), 0px -2px 1px rgb(0, 0, 0, 0.3); */
+   
+}
+
+.historify h2 {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-size: 2rem;
+    /* text-shadow: 2px 2px 4px #000000; */
+
+} 
+
+
+/* ======================================================= Lado de Pesquisas ======================================================= */
+
+
+.pesquisa {
+    padding: 12vh 30px 4vh 0px;
+}
+.dropdown-toggle, .dropdown-menu, .dropdown-item {
+    width: 100%;
+    font-size: 1.3rem;
+}
+
+.dropdown-toggle {
+    margin-bottom: 5vh;
+    font-size: 1.6rem;
+    background-color: white;
+    color:#1D3F29;
+    font-weight: 600;
+    border: none;
+    border-bottom: 2px solid  #D88E04;
+    border-radius: 0px;
+}
+
+.dropdown-menu {
+    max-height: 30vh;
+    overflow: auto;
+    border: 2px solid  #D88E04;
+}
+
+.mapaWrapper {
+    height: 53vh;
+    padding-right: 30px;
+}
+
+.mapa {
+   
+    width: 100%;
+    height: 40vh;
+    background-color: #D88E04;
+    margin-right: 15px;
+    border-radius: 25px;
+    align-content: flex-end;
+    margin-bottom: 5vh;
+    margin-top: auto;
+}
+
