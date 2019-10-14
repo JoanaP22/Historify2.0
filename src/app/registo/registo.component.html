@@ -2,52 +2,54 @@
     <div class="row login-wrapper">
         <div class="col-12 col-md-6 registo">
             <h3 class="text-center text-md-left">REGISTO</h3>
-            <form action="" class="form" autocomplete="off">
+            <form [formGroup]="registerForm" (ngSubmit)="onFormSubmit()" action="" class="form" autocomplete="off">
 
                 <div class="input-group">
-                    <input type="text" name="loginUser1" id="loginUser1" [(ngModel)]="nome" required>
+                    <input type="text" name="loginUser1" formControlName="nome" required>
                     <label for="loginUser1">Nome</label>
+                    
                 </div>
 
                 <div class="form-row">
                     <div class="input-group col-12 col-md-6">
-                        <input type="text" name="loginUser1" id="loginUser1" [(ngModel)]="username" required>
+                        <input type="text" name="loginUser1"  formControlName="userName" required>
                         <label for="loginUser1">Username</label>
                      </div>
 
                     <!-- Possibilidade de limitar o registo a pessoas nascidas antes de XXXX? -->
                     <div class="input-group col-12 col-md-6">
-                        <input type="date" name="loginUser1" id="loginUser1" [(ngModel)]="nascimento" required>
+                        <input type="date" name="loginUser1"  formControlName="dataNascimento" required>
                         <label for="loginUser1">Nascimento</label>
                      </div>
                 </div>
                 
                 <div class="input-group">
-                    <input type="email" name="loginUser1" id="loginUser1" [(ngModel)]="email" required>
+                    <input type="email" name="loginUser1" formControlName="email" required>
                     <label for="loginUser1">Email</label>
+                    
                 </div>
 
                 <div class="form-row">
                     <div class="input-group col-12 col-md-6">
-                        <input type="password" name="loginUser1" id="loginUser1" [(ngModel)]="password" required>
+                        <input type="password" name="loginUser1"  formControlName="password" required>
                         <label for="loginUser1">Password</label>
                     </div>
                     <div class="input-group col-12 col-md-6">
-                        <input type="password" name="loginUser1" id="loginUser1" [(ngModel)]="password1" required>
+                        <input type="password" name="loginUser1"  formControlName="password" required>
                         <label for="loginUser1">Confirmar Password</label>
                     </div>
                 </div>
 
                 <div class="input-group">
-                        <input type="text" name="loginUser1" id="loginUser1" [(ngModel)]="srcFoto" required>
+                        <input type="text" name="loginUser1"  formControlName="userFoto" required>
                         <label for="loginUser1">URL Foto</label>
                 </div>
 
                 <!-- Falta definir função onClick e condições de disabled -->
                 <div class="form-row">
                     <div class="col-6 col-md-12">
-                        <button class="submit-btn">Registar</button>
-
+                        <button [disabled]="loading"  class="submit-btn">Registar</button>
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
                     </div>
                     <div class="col-6 text-right " *ngIf="smartPhone">
                         <a routerLink="/login" routerLinkActive="router-link-active" > <p> Já tenho conta</p></a>

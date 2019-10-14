@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "@agm/core": "^1.0.0",
     "@angular/animations": "~8.2.5",
     "@angular/common": "~8.2.5",
     "@angular/compiler": "~8.2.5",
@@ -21,6 +22,7 @@
     "@angular/router": "~8.2.5",
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
+    "ngx-order-pipe": "^2.0.4",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

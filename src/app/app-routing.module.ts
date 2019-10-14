@@ -11,6 +11,7 @@ import { RegistoComponent } from './registo/registo.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { TestesComponent } from './testes/testes.component';
 
+import { AuthGuard } from './_helpers/auth.guard';
 
 
 const routes: Routes = [
