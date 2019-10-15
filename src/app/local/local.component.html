@@ -1,10 +1,13 @@
 <!-- FOTO E INFORMAÇOES PRINCIPAIS DO LOCAL -->
 <ng-container *ngFor= "let l of local">
+
 <div class="container-fluid">
    
     <div class="row nomeLocal h-100">
-        <div class="col-12 col-md-6 imagemLocal text-center my-auto">
-            <img src="https://i.imgur.com/Ue9bZoY.jpg" alt="">
+        <div class="col-12 imagemLocal text-center my-auto">
+            <img src="{{l.foto_principal}}" alt="">
+           <!-- <img src="https://ix.imgur.com/Ue9bZoY.jpg" alt="">-->
+            
         </div>
 
         <div class="col-12 col-md-6 nomeLocalLinks text-center my-auto">
@@ -57,17 +60,17 @@
                     <hr>
                 </div>
                 <div class="col-4 diaSemana">
-                    <p>Domingo</p>
-                    <img src="assets/clearsky.png" alt="">
+                    <p>Hoje</p>
+                    <img src={{src}} alt="">
                     <p>{{temp}}°C</p>
                 </div>
                 <div class="col-4 diaSemana">
-                    <p>Segunda</p>
+                    <p>Quarta</p>
                     <img src="assets/fewclouds.png" alt="">
                     <p>23ºC</p>
                 </div>
                 <div class="col-4 diaSemana">
-                    <p>Terça</p>
+                    <p>Quinta</p>
                     <img src="assets/fewclouds.png" alt="">
                     <p>23ºC</p>
                 </div>
@@ -119,52 +122,51 @@
     </div>
 
     <!-- FOTOS DA GALERIA -->
-    <div class="row galeriaFotos">
+    <div  *ngFor="let l of multimediaLocal" class="row galeriaFotos">
+         
+    <!--<ng-container *ngIf="l.id_local===localId" > </ng-container>-->
+        
         <div class="col-6 col-md-4">
             <img src="assets/blocker.png" alt="">
         </div>
-
+        
         <div class="col-6 col-md-4">
-            <img src="assets/paço_dos_duques_5.jpg" alt="" class="imagemPretoBranco">
+            <img src="{{l[4].caminho}}"  alt="" class="imagemPretoBranco">
         </div>
 
         <div class="col-6 col-md-4">
-            <img src="assets/paço_dos_duques_1.jpg" alt="">
+            <img src="{{l[0].caminho}}" alt="">
         </div>
 
         <div class="col-6 col-md-4">
-            <img src="assets/paço_dos_duques_3.JPG" alt="" class="shadow-box-left">
+            <img src="{{l[2].caminho}}" alt="" class="shadow-box-left">
         </div>
 
         <div class="col-6 col-md-4">
-            <img src="assets/paço_dos_duques_2.JPG" alt="">
+            <img src="{{l[1].caminho}}" alt="">
         </div>
 
         <div class="col-6 col-md-4">
-            <img src="assets/paço_dos_duques_7.jpg" alt="" class="imagemPretoBranco">
+            <img src="{{l[6].caminho}}" alt="" class="imagemPretoBranco">
         </div>
 
         <div class="col-12 col-md-4 text-center sabiasQue">
             <h4>Sabias que...</h4>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit deleniti facilis laudantium ratione sint
-                accusamus temporibus quia, officiis dolorum. Fugiat rerum sint porro provident sunt facere dolorem
-                officia illum repellat?</p>
+            <p>{{l.sabiasque}}</p>
         </div>
 
         <div class=" d-none d-md-block col-md-4">
-            <img src="assets/paço_dos_duques_6.jpg" alt="" class="shadow-box-right">
-            <img src="assets/paço_dos_duques_4.jpg" alt="" class="imagemPretoBranco">
+            <img src="{{l[5].caminho}}" alt="" class="shadow-box-right">
+            <img src="{{l[3].caminho}}" alt="" class="imagemPretoBranco">
         </div>
 
         <div class=" d-none d-md-block col-md-4">
-            <img src="assets/paço_dos_duques_8.jpg" alt="">
+            <img src="{{l[7].caminho}}" alt="">
             <img src="assets/blocker2.png" alt="">
         </div>
+   
     </div>
 
-</div>
-
-<!-- HISTORIA DO LOCAL -->
 <div class="container-fluid">
 
     <div class="row justify-content-left" id="tituloHistoria">
@@ -301,4 +303,3 @@
     
 
 </div>
-</ng-container>

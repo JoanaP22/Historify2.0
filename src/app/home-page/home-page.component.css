@@ -211,6 +211,10 @@
     align-content: flex-end;
 }
 
+/*mapa*/
+agm-map {
+    height: 40vh;
+   }
 /* width */
 .dropdown-menu::-webkit-scrollbar {
     width: 5px;

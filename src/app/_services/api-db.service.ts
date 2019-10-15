@@ -11,9 +11,11 @@ export class ApiDBService {
 base = 'http://localhost:5000/api/'
 utilizadoresURL = this.base +'utilizador/';
 
- concelhosURL = this.base +'concelho/';
+concelhosURL = this.base +'concelho/';
 
 locaisURL = this.base +'local/';
+
+multimedia_locaisURL = this.base +'multimedia_local/';
 
 sugestoesLocaisURL =this.base + 'sugestao_local/';
 
@@ -45,6 +47,14 @@ sugestoesLocaisURL =this.base + 'sugestao_local/';
 
     return this.http.get<any[]>(this.locaisURL + id);
   }
+
+  getMultimediaLocal(id: number ) {
+
+    return this.http.get(this.multimedia_locaisURL+id);
+  }
+
+ 
+
 /*
 createSugestao(sugestao: Sugestao){
   return this.http.post(this.sugestoesLocaisURL, sugestao);

@@ -46,6 +46,7 @@ import { TestesComponent } from './testes/testes.component';
   ],
   imports: [
     BrowserModule,
+    OrderModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,

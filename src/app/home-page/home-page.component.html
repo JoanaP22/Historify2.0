@@ -26,62 +26,94 @@
                         <h2>HISTORIFY</h2>
                     </div>
                 </div>
+
+                <div>
+                    <img src="https://i.imgur.com/yIXxmjT.jpg" alt="braga" id="img2-overlay">
+                </div>
+
+                <div>
+                    <img src="https://i.imgur.com/CLiGOJx.jpg" alt="porto" id="img3-overlay">
+                </div>
+
+                <div>
+                    <img src="https://i.imgur.com/zgAo3fh.jpg" alt="sintra" id="img4-overlay">
+                </div>
+
+                <img src="https://i.imgur.com/KwdcIOE.jpg" alt="lisboa" id="img5-overlay">
+
+                <div class="col-12 historify text-center">
+                    <h2>HISTORIFY</h2>
+                </div>
             </div>
-    
-            <!-- Espaço para as informações do item seleccionado -->
-            <div class="col-12 col-xl-6">
-    
-                <div class="row historify-mobile">
-                    <div class="col-12 text-center" *ngIf="smartPhone">
-                        <h3>HISTORIFY</h3>
-                    </div>
-                </div>
-                <div class="row justify-content-around  pesquisa">
-                    <div class="col-6">
+        </div>
+
+        <!-- Espaço para as informações do item seleccionado -->
+        <div class="col-12 col-xl-6">
+
+            <div class="row justify-content-around  pesquisa">
+                <div class="col-6">
                         <div class="dropdown">
-                            <button class="btn dropdown-toggle text-left" type="button" id="concelho" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                Concelho
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="dropdown">
-                            <button class="btn dropdown-toggle text-left" type="button" id="local" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                Local
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-    
-                            </div>
-                        </div>
-                    </div>
+                                <button (click)="getConcelhos()" class="btn dropdown-toggle text-left" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Concelho
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <ng-container *ngFor="let c of concelhos"  > <a (click)="onClick(c.id_concelho)"  [routerLink]="['']" routerLinkActive="router-link-active"  class="dropdown-item" > {{c.descricao}}</a></ng-container>
+                              <!--<a class="dropdown-item" href="#">Action</a>
+                                  <a class="dropdown-item" href="#">Another action</a>
+                                  <a class="dropdown-item" href="#">Something else here</a>
+                                  <a class="dropdown-item" href="#">Action</a>
+                                  <a class="dropdown-item" href="#">Another action</a>
+                                  <a class="dropdown-item" href="#">Something else here</a>
+                                  <a class="dropdown-item" href="#">Action</a>
+                                  <a class="dropdown-item" href="#">Another action</a>
+                                  <a class="dropdown-item" href="#">Something else here</a>
+                                -->
+                                </div>
+                              </div>
                 </div>
+                <div class="col-6">
+                        <div class="dropdown">
+                                <button (click)="getLocais()" class="btn dropdown-toggle text-left" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Local
+                                </button>
+                                <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <ng-container *ngFor="let l of locais| orderBy: 'nome'" > <a  *ngIf="l.id_concelho == concselec" [routerLink]="['/local']" routerLinkActive="router-link-active"  class="dropdown-item" (click)="onClickL(l.id_local)" ><span >{{l.nome}}</span></a></ng-container>
+                            <!--<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                  <a class="dropdown-item" href="#">Action</a>
+                                  <a class="dropdown-item" href="#">Another action</a>
+                                  <a class="dropdown-item" href="#">Something else here</a>
+                                  <a class="dropdown-item" href="#">Action</a>
+                                  <a class="dropdown-item" href="#">Another action</a>
+                                  <a class="dropdown-item" href="#">Something else here</a>
+                                  <a class="dropdown-item" href="#">Action</a>
+                                  <a class="dropdown-item" href="#">Another action</a>
+                                  <a class="dropdown-item" href="#">Something else here</a>
+                                -->
+                                </div>
+                              </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mapaWrapper">
+                <div class="col-12 mapa my-auto">
+
+                  <!--    <p >Posição atual: Lat: {{latitudeAtual}} Long: {{longitudeAtual}}</p>
+                        <p >Local: Lat: {{latitude}} Long: {{longitude}}</p>
     
-                <div class="row justify-content-center mapaWrapper">
-                    <div class="col-12 mapa my-auto">
-    
-                    </div>
+                      -->   
+                       
+                          <agm-map [latitude]="latitude" [longitude]="longitude"  [zoom]="zoom" >
+                                <agm-marker  (mouseOver)="window.open()" (mouseOut)="window.close()" *ngFor="let marker of locais" [latitude]="marker.latitude"
+                                [longitude]="marker.longitude" [iconUrl]="
+                                {url: './assets/localizacao.png',scaledSize: {width: 25,  height: 25}}"   (markerClick)="onClickL(marker.id_local)">
+                                 <agm-info-window #window>
+                                  <h5> {{marker.nome}}</h5>
+                                  <img  src="{{marker.foto_principal}}" alt="{{marker.nome}}" width="100" height="80">
+                                </agm-info-window>
+                              </agm-marker>
+                            </agm-map>
+
+
                 </div>
             </div>
         </div>
@@ -121,5 +153,13 @@
                     </div>
                 </div>
             </div>
+    
+    
+    
         </div>
+    
+    
     </div>
+
+
+</div>

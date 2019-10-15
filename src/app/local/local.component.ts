@@ -21,12 +21,18 @@ export class LocalComponent implements OnInit {
   horas: string;
   data: string;
   servicoComentario: ServicoComentariosService;
-  src: string;
+  
+  d: number;
+  m: number;
+  y: number;
 
+  src: string;
+  localId: number;
   concselec: number = 1;
   descConc: string;
   
   local: Array<any>;
+  multimediaLocal: Array<any>;
   historifyDB: ApiDBService;
   nome: string;
   descricao: string;
@@ -51,13 +57,20 @@ export class LocalComponent implements OnInit {
 
   constructor(private router: Router, private apiDBService: ApiDBService, private apiTempoService: ApiTempoService,
     servicoExterno: ServicoComentariosService) {
+    this.localId = Number(window.localStorage.getItem('id_local'));
     this.servicoComentario = servicoExterno;
     this.historifyDB = apiDBService;
     this.myWeather = apiTempoService;
-    this.getLocalById();}
+    this.getLocalById();
+    this.getMultimediaLocal()}
 
 //IR BUSCAR DIA E HORAS
 today = new Date();
+
+//day1 : number = Date.now();
+//day2 : number = Date.now() +12*60*60*60;
+//day3 : number = Date.now() +4*12*60*60*60;
+
 
 hour = this.today.getHours();
 minutes = this.today.getMinutes();
@@ -65,6 +78,19 @@ day = this.today.getDay();
 month = this.today.getMonth();
 year = this.today.getFullYear();
 
+dt = this.today.getDate();
+
+//"2019-10-14 12:00:00"
+data1(){
+
+this.d = this.today.getDate();
+this.m  = this.today.getMonth();
+this.y = this.today.getFullYear();
+  
+this.data = this.y.toString() + "-" + this.m.toString() && "-" + this.d.toString() + ' 12:00:00';
+return this.data;
+
+}
 
 //FUNCAO PARA IR BUSCAR A DATA -> DEVE FUNCIONAR
 dataCompl (day: number, month: number, year: number) {
@@ -155,30 +181,33 @@ getLocalById() {
     });
 }
  
+getMultimediaLocal() {
+const localId = Number(window.localStorage.getItem('id_local'));
+  this.historifyDB.getMultimediaLocal(localId)
+    .subscribe(dados => {
+      this.multimediaLocal = [dados];
+    });
+}
+
+
 
 
 // obter dados da api-tempo
 getAndFill() {
   this.myWeather.baseask(this.descConc).subscribe(
     data => {
-      this.datahora = (data['list']['dt_txt']);
-      this.temp = (data['list']['main']['temp']).toFixed(0);
-      this.stateWeather = data['list']['weather'][0]['description'];
-      this.iconVal = data['list']['weather'][0]['icon'];
+     console.log(this.data1() );
+     console.log(this.month);
+     console.log( this.year);
+     console.log( this.dt);
+      this.datahora = (data['list'][0]['dt_txt']);
+      this.temp = (data['list'][0]['main']['temp']).toFixed(0);
+      this.stateWeather = data['list'][0]['weather'][0]['description'];
+      this.iconVal = data['list'][0]['weather'][0]['icon'];
       this.src = this.icon + this.iconVal + this.type;
     })
 }
-/*
-getAndFill() {
-  this.myWeather.baseask(this.descConc).subscribe(
-    data => {
-      this.temp = (data['main']['temp']).toFixed(0);
-      this.stateWeather = data['weather'][0]['description'];
-      this.iconVal = data['weather'][0]['icon'];
-      this.src = this.icon + this.iconVal + this.type;
-    })
-}
-*/
+
 
 
   ngOnInit() {
@@ -188,6 +217,7 @@ getAndFill() {
     });
 
     this.getLocalById();
+    this.getMultimediaLocal();
     this.getAndFill();
   }
 
