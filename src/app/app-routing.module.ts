@@ -24,7 +24,10 @@ const routes: Routes = [
   {path: 'navbar', component: NavbarComponent},
   {path: 'registo', component: RegistoComponent},
   {path: 'sobre-nos', component: SobreNosComponent},
+
+  // PARA ELIMINAR QUANDO PROJECTO ESTIVER CONCLUIDO
   {path: 'testes', component: TestesComponent},
+ 
 
   //Caso seja inserido informação inválida, reedireciona para '', que reedireciona para HomePage
   {path: '**', redirectTo: '' }

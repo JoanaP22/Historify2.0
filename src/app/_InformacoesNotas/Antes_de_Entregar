@@ -1,0 +1,5 @@
+Eliminar:
+    - Componente Testes
+    - Componente Testes1
+
+Apagar tudo correspondente a estes componentes, tanto no app-modules como no app-routing

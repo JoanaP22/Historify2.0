@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <div class="row">
+    <div class="row" [ngClass]="{'home-page': pesquisa === true}">
         <!-- Espaço para as imagens e os menus -->
         <div class="fotos-hover col-xl-6">
             <div class="row row-imagens">
@@ -31,43 +31,50 @@
         <!-- Espaço para as informações do item seleccionado -->
         <div class="col-12 col-xl-6">
 
+            <div class="row historify-mobile">
+                <div class="col-12 text-center" *ngIf="smartPhone">
+                    <h3>HISTORIFY</h3>
+                </div>
+            </div>
             <div class="row justify-content-around  pesquisa">
                 <div class="col-6">
-                        <div class="dropdown">
-                                <button class="btn dropdown-toggle text-left" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Concelho
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                  <a class="dropdown-item" href="#">Action</a>
-                                  <a class="dropdown-item" href="#">Another action</a>
-                                  <a class="dropdown-item" href="#">Something else here</a>
-                                  <a class="dropdown-item" href="#">Action</a>
-                                  <a class="dropdown-item" href="#">Another action</a>
-                                  <a class="dropdown-item" href="#">Something else here</a>
-                                  <a class="dropdown-item" href="#">Action</a>
-                                  <a class="dropdown-item" href="#">Another action</a>
-                                  <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
-                              </div>
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle text-left" type="button" id="concelho" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Concelho
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-6">
-                        <div class="dropdown">
-                                <button class="btn dropdown-toggle text-left" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Local
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                  <a class="dropdown-item" href="#">Action</a>
-                                  <a class="dropdown-item" href="#">Another action</a>
-                                  <a class="dropdown-item" href="#">Something else here</a>
-                                  <a class="dropdown-item" href="#">Action</a>
-                                  <a class="dropdown-item" href="#">Another action</a>
-                                  <a class="dropdown-item" href="#">Something else here</a>
-                                  <a class="dropdown-item" href="#">Action</a>
-                                  <a class="dropdown-item" href="#">Another action</a>
-                                  <a class="dropdown-item" href="#">Something else here</a>
-                                  
-                                </div>
-                              </div>
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle text-left" type="button" id="local" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Local
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -76,14 +83,43 @@
 
                 </div>
             </div>
-
-
-
         </div>
-
-
-
     </div>
 
+    <div class="row justify-content-center resultadoPesquisas" *ngIf="pesquisa">
+        <div class="col-12 text-center">
+            <!-- 35 É O LENGTH DO ARRAY CRIADO COM A PESQUISA -->
+            <h3>FORAM ENCONTRADOS 35 RESULTADOS PARA A SUA PESQUISA</h3>
+        </div>
+        <!-- LOCAL PARA CORRER NGFOR COM A PESQUISA -->
+        <div class="card mb-5" style="max-width: 70%;">
+            <div class="row no-gutters">
+                <div class="col-lg-4 no-gutters">
+                    <img src="https://i.imgur.com/ZJ1u0Hh.jpg" class="card-img" alt="...">
+                </div>
+                <div class="col-lg-8">
+                    <div class="card-header">
+                        <div class="row no-gutters">
+                            <div class="col-7 text-left my-auto">
+                                <span>Igreja Matriz</span>
+                            </div>
+                            <div class="col-5 text-right icons-pesquisa my-auto">
+                                <div class="row no-gutters justify-content-left ">
+                                    <div class="col-2" id="icon-sound"><a href=""></a></div>
+                                    <div class="col-2" id="icon-visited"><a href=""></a></div>
+                                    <div class="col-2" id="icon-favorite"><a href=""></a></div>
 
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text" id="historia-local">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore at omnis tenetur perspiciatis. Illo accusamus eius repellendus aliquid laboriosam, officia optio blanditiis eveniet error non. Laborum deserunt temporibus dolores et.</p>
+                        <p class="card-text"><small class="text-muted">★ 3.9 (rating)</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

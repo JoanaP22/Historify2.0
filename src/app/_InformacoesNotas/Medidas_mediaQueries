@@ -1,0 +1,63 @@
+<!-- ===========================================================MEDIA QUERIES:============================================================= -->
+
+Cheat Sheet - Media Queries para dispositivos diferentes: 
+	Source: https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+
+====================================Phones==================================
+* IPhones (All) 
+	- Min-Width: 320px
+	- Max-Width: 812px (Landscape)
+
+* Galaxy (All)
+	- Min-Width: 360px
+	- Max-Width: 640px (Landscape)
+	
+* Google Pixel (All)
+	- Min-Width: 360px
+	- Max-Width: 640px (Landscape)
+
+* Phones - RESUME:
+	- Min-Width: 320px
+	- Max-Width: 812px (Landscape)
+
+====================================Tablets==================================
+
+* IPad (All) 
+	- Min-Width: 768px
+	- Max-Width: 1366px (Landscape)
+
+* Galaxy (All)
+	- Min-Width: 800px
+	- Max-Width: 1280px (Landscape)
+	
+* Nexus (All)
+	- Min-Width: 601px
+	- Max-Width: 2048px (Landscape)
+
+====================================Portateis==================================
+
+* IPad (All) 
+	- Min-Width: 1200px
+	- Max-Width: 1600px  - 192 dpi
+
+
+<!-- =================================================MEDIA QUERIES (em utilização):======================================================= -->
+
+Media queries do bootstrap: https://getbootstrap.com/docs/4.3/layout/overview/#responsive-breakpoints
+
+Extra small devices (portrait phones, less than 576px)
+No media query for `xs` since this is the default in Bootstrap
+
+Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+

@@ -8,6 +8,11 @@
     margin: 0px;
     padding: 0px;
 }
+
+.home-page {
+    padding-bottom: 55px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
 .row-imagens {
     position: relative;
     width: 100%;
@@ -126,9 +131,6 @@
     -webkit-filter: none;
 }
 
-
-
-
 .historify {
     letter-spacing: 1rem;
     position: absolute;
@@ -215,42 +217,149 @@
     border-radius: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
-  }
+}
   
-  /* Track */
-  .dropdown-menu::-webkit-scrollbar-track {
+/* Track */
+.dropdown-menu::-webkit-scrollbar-track {
     background: white;
-  }
+}
   
-  /* Handle */
-  .dropdown-menu::-webkit-scrollbar-thumb {
+/* Handle */
+.dropdown-menu::-webkit-scrollbar-thumb {
     background: rgba(29, 63, 41, 0.6);
     border-radius: 10px;
 
-  }
+}
   
-  /* Handle on hover */
-  .dropdown-menu::-webkit-scrollbar-thumb:hover {
+/* Handle on hover */
+.dropdown-menu::-webkit-scrollbar-thumb:hover {
     background: rgba(29, 63, 41, 1);
-  }
+}
+
+/* ======================================================= Resultado Pesquisas ======================================================= */
+
+
+.resultadoPesquisas h3 {
+    padding: 5vh  0px;
+    
+}
+
+.card {
+    transition: 0.5s;
+
+}
+
+.card:hover {
+    box-shadow: 3px 2px 8px -1px rgba(0, 0, 0, 0.4);
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.card-header {
+    text-transform: uppercase;
+    background-color: rgba(216, 142, 4, 1);
+    color: white;
+}
+
+#icon-sound {
+    margin-left: auto;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    background: url("https://i.imgur.com/Dl8Rzk8.png") no-repeat center;
+    background-size: contain;
+    transition: 0.3s;
+}
+
+#icon-sound:hover {
+    background: url("https://i.imgur.com/bxifAz5.png") no-repeat center;
+    background-size: contain;
+    transition: 0.3s;
+}
+
+#icon-visited {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    background: url("https://i.imgur.com/saGGPxu.png") no-repeat center;
+    background-size: contain;
+}
+
+#icon-visited:hover {
+    background: url("https://i.imgur.com/4IEAr0F.png") no-repeat center;
+    background-size: contain;
+    transition: 0.3s;
+}
+
+#icon-favorite {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    background: url("https://i.imgur.com/x19Tjc1.png") no-repeat center;
+    background-size: contain;
+}
+
+#icon-favorite:hover {
+    background: url("https://i.imgur.com/EjELSm5.png") no-repeat center;
+    background-size: contain;
+    transition: 0.3s;
+}
+
+/* LIMITA O TEXTO A 3 LINHAS ATÉ ACRESCENTAR ETC */
+#historia-local {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    line-height: 1.5rem;        /* fallback */
+    max-height: 4.5rem;       /* fallback */
+}
+
 
   @media (max-width: 1199px) {
       .fotos-hover {
           display: none!important;
       }
+
       .mapaWrapper {
           padding-left: 50px;
           padding-right: 50px;
       }
+
       .col-12 {
           padding: 0px;
           margin: 0px;
       }
 
       .pesquisa {
-          padding-left: 50px;
-          padding-right: 50px;
-      }
+        padding: 4vh 50px 4vh 50px;
+    }
+
+    .historify-mobile h3 {
+        letter-spacing: 1rem;
+        padding-top: 4vh;
+        padding-bottom: 4vh;
+        font-size: 3rem;
+        font-weight: 600;
+        color: #1D3F29;
+    }
+
+  }
+
+  @media (max-width: 991px) {
+    .card:hover {
+        box-shadow:none;
+    }
+
+    .card {
+        border: 1px solid rgba(0, 0, 0, 0.125);
+    }
   }
 
   @media (max-width: 576px) {
@@ -286,17 +395,35 @@
         border: 1.5px solid  #D88E04;
         border-radius: 5px;
         text-transform: uppercase;
-    
     }
     
     .dropdown-menu {
-        
         max-height: 30vh;
-        overflow: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
         border: none;
         box-shadow: 3px 2px 8px -1px rgba(0, 0, 0, 0.4);
         padding-bottom: 10px;
     }
+
+    .historify-mobile h3 {
+        letter-spacing: 1rem;
+        padding-top: 4vh;
+        padding-bottom: 4vh;
+        font-size: 1.5rem;
+        color: #1D3F29;
+    }
+
+    #concelho {
+        width: 95%;
+        margin-right: 5%;
+    }
+
+    #local {
+        width: 95%;
+        margin-right: 5%;
+    }
+
 
   }
 

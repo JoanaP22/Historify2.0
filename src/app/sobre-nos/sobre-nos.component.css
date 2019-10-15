@@ -1,0 +1,151 @@
+
+.container-fluid {
+  margin: 0px;
+  padding: 0px;
+  margin-top: 10vh;
+}
+
+.theTeam {
+
+  background: url("/assets/sobreNos_header.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.historia {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  padding: 15px 50px 15px 50px;
+  font-size: 1.3rem;
+}
+
+.historia h2 {
+  color: #1D3F29;
+  font-weight: 600;
+  padding-bottom: 20px;
+}
+
+#equipa-titulo {
+  margin-top: 15vh;
+}
+
+.equipa {
+  background-color: #D88E04;
+  padding: 10vh 10vw 5vh 10vw;
+  width: 100%;
+}
+
+
+.card {
+  position: relative;
+  z-index: 0;
+  border:none;
+  box-shadow: 3px 2px 8px -1px rgba(0, 0, 0, 0.4);
+  transition: 0.5s;
+  margin-bottom: 5vh;
+}
+
+.card-img {
+  position: relative;
+}
+
+.card-img-top {
+  display: block;
+  width: 100%;
+  height: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(29, 63, 41, 0.7);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+
+.overlay img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    padding: 10px;
+
+}
+
+.links-photo {
+  white-space: nowrap; 
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+
+}
+
+.card-img:hover .overlay {
+  height: 100%;
+}
+
+.card-img:hover .card-img-top {
+    transition: scale(1.05);
+}
+
+.card-body {
+  min-height: 18vh;
+  padding-bottom: 10px;
+}
+
+.card-body img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  padding: 3px;
+}
+
+.card:hover {
+  z-index: 15;
+  transition: .5s;
+  transform: scale(1.2);
+}
+
+.funcionalidades {
+  margin-top: 15vh;
+  padding: 10vh 10vw 5vh 10vw;
+}
+
+.funcionalidades h2 {
+  padding-bottom: 5vh;
+  color: #1D3F29;
+}
+
+.col-funcionalidades {
+  padding: 30px 50px;
+  margin-bottom: 5vh;
+  transition: .5s;
+}
+
+.col-funcionalidades img {
+  width: 35%;
+  height: 35%;
+  object-fit: cover;
+}
+
+.col-funcionalidades h5 {
+  margin-bottom: 4vh;
+  margin-top: 4vh;
+  font-size: 1.5rem;
+}
+
+.col-funcionalidades:hover {
+  transition: .5s;
+  box-shadow: 3px 2px 8px -1px rgba(0, 0, 0, 0.4);
+
+}

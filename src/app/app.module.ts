@@ -29,6 +29,8 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { TestesComponent } from './testes/testes.component';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +41,7 @@ import { TestesComponent } from './testes/testes.component';
     RegistoComponent,
     SobreNosComponent,
     TestesComponent,
+    
     
   ],
   imports: [

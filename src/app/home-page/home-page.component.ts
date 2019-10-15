@@ -13,6 +13,24 @@ import { NavBarService } from '../nav-bar.service';
 })
 export class HomePageComponent implements OnInit {
 
+    // VARIAVEL FICA TRUE QUANDO A LARGURA DO ECRA É INFERIOR A 1200PX
+    smartPhone = false;
+
+  // VARIAVEL SO FICA TRUE QUANDO É ACIONADA ALGUMA PESQUISA
+    pesquisa = true;
+  
+  // FUNÇAO PARA DETECTAR LARGURA DE ECRA E VERIFICAR SE É MENOR QUE 768PX 
+    getSmartPhone(): boolean {
+      const w = document.documentElement.clientWidth;
+      const breakpoint = 1199;
+      console.log(w);
+      if (w < breakpoint) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
   historifyDB: ApiDBService;
   myWeather: ApiTempoService;
   public currentUser;
@@ -26,11 +44,17 @@ export class HomePageComponent implements OnInit {
   
   ngOnInit() {
 
+           // MUDANÇA DE VARIAVEL SMARTPHONE PARA SÓ APARECER 'ja tenho conta' EM MOBILE
+           this.smartPhone = this.getSmartPhone();
+           window.onresize = () => {
+             this.smartPhone = this.getSmartPhone();
+           };
+
     $("#img1-overlay").click(function() {
       window.location = $(this).find("a").attr("href"); 
       return false;
     });
-    this.nav.hide();
+
   
     this.currentUser = localStorage.getItem('currentUser')? JSON.parse((localStorage.getItem('currentUser'))) : '';
 

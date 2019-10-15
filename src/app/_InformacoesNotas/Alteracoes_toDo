@@ -1,0 +1,19 @@
+<!-- ================================================================PARA:================================================================ -->
+
+Página Principal
+Página dos Locais
+Pagina do Utilizador
+Formulário de Inscrição de Novo Utilizador
+Página de Login
+
+
+<!-- ===========================================================PARA ALTERAR:============================================================= -->
+
+Página de locais - A ALTERAR SE HOUVER TEMPO:
+* Informação do local -> tirar linha em media queries menor
+* Ajustar o design desses 3 blocos
+* responsividade da caixa de comentários e comentarios em media queries menores
+* Fotos da galeria passarem a Uma a Uma em Telemoveis
+* por links de href dos icons a funcionar e levar para a parte correcta da página
+
+
